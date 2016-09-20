@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="demo">
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="example.js"></script>
+    <script src="https://integ-pago.culqi.com/js/v1"></script> 
+
+  </head>
+  <body>
+
+  <div ng-controller="DialogDemoCtrl as $ctrl">
+
+    <label> Descripción de Pago </label>
+    <input type="text" ng-model="$ctrl.payment.description" > </input>
+    <br/>
+    <label> Precio </label>
+    <input type="text" ng-model="$ctrl.payment.amount" > </input>
+    <br/>
+
+    <label> Orden </label>
+    <input type="text" ng-model="$ctrl.payment.orden" > </input>
+    <br/>
+
+    <button type="button" class="btn btn-default" ng-click="$ctrl.open()">Comprar</button>
+  </div>
+
+  </body>
+</html>
