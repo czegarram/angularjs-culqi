@@ -17,10 +17,13 @@ angular.module('demo').controller('DialogDemoCtrl', function ($scope, $timeout) 
       
     //hack for culqi_api
     var element = document.getElementById("culqi_checkout_frame");
-    element.parentNode.removeChild(element);
+
+    if(element){
+      element.parentNode.removeChild(element);  
+    }    
 
     $timeout(function(){
-      Culqi.codigoComercio = 'test_0TUofigMd5oF'; 
+      Culqi.codigoComercio = 'v8HxAHHvjVzf'; 
       Culqi.configurar({
           nombre: 'Easy Buy', 
           orden: $ctrl.payment.orden, 
@@ -29,7 +32,7 @@ angular.module('demo').controller('DialogDemoCtrl', function ($scope, $timeout) 
           monto: parseInt($ctrl.payment.amount),
           guardar: false
       });
-      Culqi.cargar(); 
+      //Culqi.cargar(); 
 
       culqi = function(){
 
@@ -57,7 +60,7 @@ angular.module('demo').controller('DialogDemoCtrl', function ($scope, $timeout) 
         Culqi.abrir(); 
       },100);
 
-    },100); 
+    },500); 
 
   }; 
 
